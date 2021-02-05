@@ -9,12 +9,14 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.homeworkapplication.R;
 import com.example.homeworkapplication.databinding.ActivityDashboardBinding;
 
 public class DashboardActivity extends AppCompatActivity {
 
     private static final String TAG = "DashboardActivity";
     private ActivityDashboardBinding activityDashboardBinding;
+    private String toResultsKey = "dashboardToResultsKey";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -57,8 +59,9 @@ public class DashboardActivity extends AppCompatActivity {
 
     }
 
-    private void toAnimalResults(){
+    private void toAnimalResults(String pack){
         Intent intent = new Intent(this, AnimalResultsActivity.class );
+        intent.putExtra(toResultsKey, pack);
         startActivity(intent);
     }
 
